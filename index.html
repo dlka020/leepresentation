@@ -1,16 +1,209 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TEXT IN PUBLISHING homepage</title>
-        <meta charset="utf-8">
-    </head>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEXT IN PUBLISHING homepage</title>
+<style>
+  body { font-family: Verdana; margin:0; padding:20px; background:#e3e3e3; }
+  h1 { text-align:center; margin-bottom:20px; }
+
+  /* 연도 분류표 (줄 맞춤) */
+  #filters {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap:10px;
+    margin-bottom:20px;
+    text-align:center;
+  }
+  #filters span {
+    cursor:pointer;
+    padding:5px 0;
+    font-weight:500;
+    color:#333;
+    border-bottom:2px solid transparent;
+  }
+  #filters span.active { font-weight:700; border-color:#000; }
+
+  /* 상품 그리드 */
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr); /* PC 기본 4열 */
+    gap:15px;
+  }
+  .post {
+    background:#fff; border:1px solid #ddd; border-radius:6px;
+    cursor:pointer; overflow:hidden; transition:transform .2s;
+  }
+  .post:hover { transform:scale(1.02); }
+  .post img { width:100%; aspect-ratio:1/1; object-fit:cover; }
+  .meta { padding:10px; font-size:14px; text-align:center; }
+
+  /* 반응형: 모바일 2열 */
+  @media (max-width:768px){
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* 모달 */
+  .modal {
+    display:none; position:fixed; z-index:1000; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,.7); justify-content:center; align-items:center;
+  }
+  .modal-content {
+    background:#fff; padding:20px; border-radius:8px; max-width:600px;
+    width:90%; max-height:90%; overflow:auto; position:relative;
+  }
+  .close {
+    position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;
+  }
+  .modal-images img {
+    width:100%; margin-bottom:10px; border-radius:6px;
+  }
+  .modal h2 { margin-top:0; }
+</style>
+</head>
 <body>
-        <div style="background-color: #ffffff; text-align: center; padding: 10px 5px">
-            <h1 style="font-family: Tahoma; font-size: 10px"><span>TEXT IN PUBLISHING</span></h1>
-        </div>
-        <div style="font-family: Tahoma, serif; color: #000000; font-size: 20px; text-align: left; margin: 200px 200px">
-            <h2 style="font-weight: 400px; font-size: 15px">다시 찾아간 숲에서
-            </h2>
+
+<h1>TEXT IN PUBLISHING</h1>
+
+<!-- 연도 분류표 -->
+<div id="filters"></div>
+
+<!-- 상품 목록 -->
+<div class="grid">
+  <article class="post" data-year="2025"
+    data-title="다시 찾아간 숲에서 전시포스터"
+    data-content="2025년 2월에 개최된 기획전 <다시 찾아간 숲에서> 포스터입니다."
+    data-images="https://via.placeholder.com/600x600?text=2025+A,https://via.placeholder.com/600x600?text=2025+A+Detail">
+    <img src="https://via.placeholder.com/400x400?text=2025+A" alt="다시 찾아간 숲에서 전시포스터" loading="lazy">
+    <div class="meta">다시 찾아간 숲에서 전시포스터</div>
+  </article>
+
+  <article class="post" data-year="2025"
+    data-title="다시 찾아간 숲에서 전시도록"
+    data-content="2025년 2월에 개최된 기획전 <다시 찾아간 숲에서> 도록입니다."
+    data-images="https://via.placeholder.com/600x600?text=2025+B">
+    <img src="https://via.placeholder.com/400x400?text=2025+B" alt="다시 찾아간 숲에서 전시도록" loading="lazy">
+    <div class="meta">다시 찾아간 숲에서 전시도록</div>
+  </article>
+
+  <article class="post" data-year="2025"
+    data-title="Text to Image 전시포스터"
+    data-content="2025년 7월에 개최된 미디어월전시 <Text to Image> 포스터입니다."
+    data-images="https://via.placeholder.com/600x600?text=2024+X">
+    <img src="https://via.placeholder.com/400x400?text=2024+X" alt="Text to Image 전시포스터" loading="lazy">
+    <div class="meta">Text to Image 전시포스터</div>
+  </article>
+</div>
+
+    <article class="post" data-year="2025"
+    data-title="Voice Voice ! 전시포스터"
+    data-content="2025년 9월에 개최된 그룹전 <Voice Voice !> 포스터입니다."
+    data-images="https://via.placeholder.com/600x600?text=2024+X">
+    <img src="https://via.placeholder.com/400x400?text=2024+X" alt="Voice Voice 전시포스터" loading="lazy">
+    <div class="meta">Voice Voice 전시포스터</div>
+  </article>
+</div>
+
+       <article class="post" data-year="2025"
+    data-title="우리를 위한 방 Rooms for us 포스터"
+    data-content="2025년 9월에 개최된 드로잉워크숍 <우리를 위한 방 Rooms for us> 포스터입니다."
+    data-images="https://via.placeholder.com/600x600?text=2024+X">
+    <img src="https://via.placeholder.com/400x400?text=2024+X" alt="우리를 위한 방 포스터" loading="lazy">
+    <div class="meta">우리를 위한 방 포스터</div>
+  </article>
+</div>
+
+         <article class="post" data-year="2025"
+    data-title="우리를 위한 방 Rooms for us 소책자"
+    data-content="2025년 9월에 개최된 드로잉워크숍 <우리를 위한 방 Rooms for us> 리플렛입니다."
+    data-images="https://via.placeholder.com/600x600?text=2024+X">
+    <img src="https://via.placeholder.com/400x400?text=2024+X" alt="우리를 위한 방 리플렛" loading="lazy">
+    <div class="meta">우리를 위한 방 리플렛</div>
+  </article>
+</div>
+
+            <article class="post" data-year="2025"
+    data-title="Vegetables on the table 단행본"
+    data-content="비건과 관계미학을 비평하는 <Vegetables on the table> 단행본입니다."
+    data-images="https://via.placeholder.com/600x600?text=2024+X">
+    <img src="https://via.placeholder.com/400x400?text=2024+X" alt="Vegetables on the table 단행본" loading="lazy">
+    <div class="meta">Vegetables on the table 단행본</div>
+  </article>
+</div>
+
+<!-- 모달 -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <div class="modal-images" id="modalImages"></div>
+    <p id="modalContent"></p>
+  </div>
+</div>
+
+<script>
+  const posts = document.querySelectorAll('.post');
+
+  // 연도 자동 추출
+  const years = [...new Set([...posts].map(p => p.dataset.year))].sort((a,b)=>b-a);
+  const filters = document.getElementById('filters');
+
+  // 전체 + 연도별 분류표 생성
+  const allSpan = document.createElement('span');
+  allSpan.textContent = '전체';
+  allSpan.dataset.year = 'all';
+  allSpan.classList.add('active');
+  filters.appendChild(allSpan);
+
+  years.forEach(y => {
+    const span = document.createElement('span');
+    span.textContent = y;
+    span.dataset.year = y;
+    filters.appendChild(span);
+  });
+
+  // 분류표 클릭 필터링
+  filters.addEventListener('click', e => {
+    if(e.target.tagName==='SPAN'){
+      const year = e.target.dataset.year;
+      document.querySelectorAll('#filters span').forEach(s=>s.classList.remove('active'));
+      e.target.classList.add('active');
+
+      posts.forEach(post=>{
+        post.style.display = (year==='all' || post.dataset.year===year)?'block':'none';
+      });
+    }
+  });
+
+  // 모달
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImages = document.getElementById('modalImages');
+  const modalContent = document.getElementById('modalContent');
+  const closeBtn = document.querySelector('.close');
+
+  posts.forEach(post => {
+    post.addEventListener('click', () => {
+      modalTitle.textContent = post.dataset.title;
+      modalContent.textContent = post.dataset.content;
+      modalImages.innerHTML = "";
+      post.dataset.images.split(',').forEach(src=>{
+        const img = document.createElement('img');
+        img.src = src.trim();
+        img.loading = "lazy"; // 모달 이미지도 lazy loading 적용
+        modalImages.appendChild(img);
+      });
+      modal.style.display='flex';
+    });
+  });
+
+  closeBtn.onclick = ()=>modal.style.display='none';
+  window.onclick = e => { if(e.target==modal) modal.style.display='none'; }
+</script>
+
+</body>
+</html>
         </div>
         <div style="font-family: Times New Roman, serif; background-color: #ffffff; font-size: 10px; text-align: center">
             <p style="color: #000000">ⓒ 2025. Dongjoo Lee. All rights reserved.</p>
@@ -18,6 +211,7 @@
         </div>
     </body>
 </html>
+
 
 
 
