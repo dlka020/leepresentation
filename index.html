@@ -28,7 +28,7 @@
   /* 상품 그리드 */
   .grid {
     display:grid;
-    grid-template-columns: repeat(4, 2fr); /* PC 기본 4열 */
+    grid-template-columns: repeat(4, 1fr); /* PC 기본 4열 */
     gap:15px;
   }
   .post {
@@ -41,7 +41,7 @@
 
   /* 반응형: 모바일 2열 */
   @media (max-width:768px){
-    .grid { grid-template-columns: repeat(2, 4fr); }
+    .grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   /* 모달 */
@@ -78,15 +78,7 @@
     <img src="fragments-of-the-wood_01.jpg" alt="다시 찾아간 숲에서 전시포스터" loading="lazy">
     <div class="meta">다시 찾아간 숲에서 전시포스터</div>
   </article>
-
-  <article class="post" data-year="2025"
-    data-title="다시 찾아간 숲에서 전시도록"
-    data-content="2025년 2월에 개최된 기획전 <다시 찾아간 숲에서> 도록입니다."
-    data-images="fragments-of-the-wood_book03.jpg">
-    <img src="fragments-of-the-wood_book03.jpg" alt="다시 찾아간 숲에서 전시도록" loading="lazy">
-    <div class="meta">다시 찾아간 숲에서 전시도록</div>
-  </article>
-
+  
   <article class="post" data-year="2025"
     data-title="Text to Image 전시포스터"
     data-content="2025년 7월에 개최된 미디어월전시 <Text to Image> 포스터입니다."
@@ -113,6 +105,14 @@
     <div class="meta">우리를 위한 방 포스터</div>
   </article>
 </div>
+
+   <article class="post" data-year="2025"
+    data-title="다시 찾아간 숲에서 전시도록"
+    data-content="2025년 2월에 개최된 기획전 <다시 찾아간 숲에서> 도록입니다."
+    data-images="fragments-of-the-wood_book03.jpg">
+    <img src="fragments-of-the-wood_book03.jpg" alt="다시 찾아간 숲에서 전시도록" loading="lazy">
+    <div class="meta">다시 찾아간 숲에서 전시도록</div>
+  </article>
 
          <article class="post" data-year="2025"
     data-title="우리를 위한 방 Rooms for us 소책자"
@@ -211,6 +211,7 @@
         </div>
     </body>
 </html>
+
 
 
 
