@@ -29,7 +29,7 @@
   .grid {
     display:grid;
     grid-template-columns: repeat(4, 1fr); /* PC 기본 4열 */
-    gap:15px;
+    gap:10px;
   }
   .post {
     background:#fff; border:1px solid #ddd; border-radius:6px;
@@ -86,7 +86,6 @@
     <img src="text-to-image_01.jpg" alt="Text to Image 전시포스터" loading="lazy">
     <div class="meta">Text to Image 전시포스터</div>
   </article>
-</div>
 
     <article class="post" data-year="2025"
     data-title="Voice Voice ! 전시포스터"
@@ -95,7 +94,6 @@
     <img src="voice-voice_01.jpg" alt="Voice Voice 전시포스터" loading="lazy">
     <div class="meta">Voice Voice 전시포스터</div>
   </article>
-</div>
 
        <article class="post" data-year="2025"
     data-title="우리를 위한 방 Rooms for us 포스터"
@@ -104,7 +102,6 @@
     <img src="roomsforus_01.jpg" alt="우리를 위한 방 포스터" loading="lazy">
     <div class="meta">우리를 위한 방 포스터</div>
   </article>
-</div>
 
    <article class="post" data-year="2025"
     data-title="다시 찾아간 숲에서 전시도록"
@@ -121,7 +118,6 @@
     <img src="https://via.placeholder.com/400x400?text=2024+X" alt="우리를 위한 방 리플렛" loading="lazy">
     <div class="meta">우리를 위한 방 리플렛</div>
   </article>
-</div>
 
             <article class="post" data-year="2025"
     data-title="Vegetables on the table 단행본"
@@ -151,7 +147,7 @@
 
   // 전체 + 연도별 분류표 생성
   const allSpan = document.createElement('span');
-  allSpan.textContent = '전체';
+  allSpan.textContent = 'ALL';
   allSpan.dataset.year = 'all';
   allSpan.classList.add('active');
   filters.appendChild(allSpan);
@@ -211,6 +207,7 @@
         </div>
     </body>
 </html>
+
 
 
 
