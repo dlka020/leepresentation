@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEXT IN PUBLISHING homepage</title>
 <style>
-  body { font-family: Verdana; margin:0; padding:20px; background:#d4fda5; }
+  body { font-family: Verdana; margin:0; padding:20px; background:#fafafa; }
   h1 { text-align:center; margin-bottom:20px; }
 
   /* 연도 분류표 (줄 맞춤) */
@@ -60,6 +60,21 @@
     width:100%; margin-bottom:10px; border-radius:0px;
   }
   .modal h2 { margin-top:0; }
+
+  .notice {
+  pointer-events: none; /* 클릭 비활성화 */
+}
+
+.notice img {
+  border: 2px solid #000; /* 공지 강조 */
+  object-fit: cover;
+}
+
+.notice .meta {
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1px;
+}
 </style>
 </head>
 <body>
@@ -272,6 +287,7 @@ since 2022
         </div>
     </body>
 </html>
+
 
 
 
